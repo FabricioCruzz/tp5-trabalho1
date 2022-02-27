@@ -1,0 +1,43 @@
+.menu {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.menu ul {
+    margin-bottom: 2em;
+    float: left;
+    width: 100%;
+    background-color: #E3483E;
+    list-style: none;
+    border-bottom: 0.5px solid gray;
+}
+
+.logo {
+    margin: 0 0px -15px 45px !important;
+    padding: 0 !important;
+    width: 130px;
+    height: 36px;
+    background-size: 166px 64px;
+    left: 335px;
+    float: left;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.menu ul li{
+    display: inline-block;
+}
+
+.menu ul li a {
+    margin: 1em 0.5em;
+    padding: 5px 10px;
+    display: inline-block;
+
+    color: black;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    color: rgba(0, 0, 0, 0.61);
+}
