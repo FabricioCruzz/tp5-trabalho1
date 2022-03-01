@@ -1,1 +1,11 @@
-<p>login works!</p>
+<div class="container-login">
+    <h1>Login</h1>
+    <form>
+        <label>E-mail</label>
+        <input type="email" name="userEmail" placeholder="Digite o seu email..." [(ngModel)]="myUser.userEmail">
+
+        <label>Senha</label>
+        <input type="password" name="userPassword" placeholder="Digite sua senha..." [(ngModel)]="myUser.userPassword">
+    </form>
+    <button (click)="doLogin()">Logar</button>
+</div>

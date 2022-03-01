@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #323232;
+    border: none;
+}
+
+/* login container */
+
+.container-login {
+    background-color: rgba(48, 109, 223, 0.801);
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 10vh;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+/* formulário */
+
+form {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+label, input {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+input {
+    border-bottom: 2px solid #d8ca50;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid #ddca1e;
+}
+
+button {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    width: 80%;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: rgb(15, 15, 1);
+    background-color: #f0efea9c;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #636466;
+    transition: .5s;
+}
