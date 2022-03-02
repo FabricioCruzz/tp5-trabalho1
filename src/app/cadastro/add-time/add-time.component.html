@@ -3,7 +3,7 @@
 <div class="container-cadastro">
     <form>
         <label>Nome do Time</label>
-        <input type="text" name="nomeTime" placeholder="Nome do time...">
+        <input type="text" name="nomeTime" placeholder="Nome do time..." [(ngModel)]="time">
     </form>
-    <button>Cadastrar</button>
+    <button (click)="addTimeNaLista()">Cadastrar</button>
 </div>

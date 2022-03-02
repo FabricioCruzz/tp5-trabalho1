@@ -23,4 +23,9 @@ export class AuthService {
       this.usuarioAutenticado = false
     }
   }
+
+  usuarioEstaAutenticado(){
+    return this.usuarioAutenticado
+  }
+
 }

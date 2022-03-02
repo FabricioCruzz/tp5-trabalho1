@@ -9,6 +9,8 @@ import { AddTimeComponent } from './cadastro/add-time/add-time.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './cadastro/login/auth.service';
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './guards/auth.guard';
+import { SemPermissaoComponent } from './cadastro/sem-permissao/sem-permissao.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +18,15 @@ import { HomeComponent } from './home/home.component';
     MenuComponent,
     LoginComponent,
     AddTimeComponent,
-    HomeComponent
+    HomeComponent,
+    SemPermissaoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

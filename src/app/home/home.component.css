@@ -1,4 +1,9 @@
-h1{
+.container-title {
     position: relative;
-    margin: 2em 0 2em 1em;
+}
+
+h1 {
+    text-transform: uppercase;
+    margin: 7rem 10rem 3rem 10rem;
+    font-size: 2.5rem;
 }
