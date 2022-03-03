@@ -4,6 +4,52 @@
 
 h1 {
     text-transform: uppercase;
+    text-align: center;
     margin: 7rem 10rem 3rem 10rem;
     font-size: 2.5rem;
+}
+
+.container-times {
+  display: inline-block;
+  width: 40%;
+  margin: 1em;
+  padding: 0.5em 1em;
+}
+
+#titulo-votacao {
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.listagem-times {
+  width: 60%;
+  margin: 1.5rem 30%;
+}
+
+.listagem-times p {
+  display: inline-block;
+  margin: 0.25rem;
+  margin-right: 2.5rem;
+  padding: 5px;
+  width: 20%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button {
+  margin: 3px 4px;
+  padding: 0.3rem 1.5rem;
+  border-radius: 20px;
+  border: 0.5px solid black;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: rgba(82, 134, 231, 0.651);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgba(25, 92, 218, 0.89);
+  transition: .5s;
 }

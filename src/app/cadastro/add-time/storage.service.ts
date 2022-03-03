@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Time } from './time';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class StorageService {
 
   private storage: any
-  private listaTimes: Array<string> = []
+  private listaTimes: Array<Time> = []
 
   constructor() { }
 

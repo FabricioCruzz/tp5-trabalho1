@@ -2,11 +2,15 @@
     <h1>Bem-vindo à votação de times!</h1>
 </div>
 
-<div class="container-question">
-    <p>Qual o seu time favorito?</p>
-</div>
 
-<div class="container-options">
-    <!-- TODO: CARREGAMENTO DINÂNICO COM BASE NO ARRAY DE TIMES -->
-    <!-- TODO: Ver vídeo sobre isso salvo nos favoritos -->
+<div class="container-times">
+
+  <p id="titulo-votacao">Qual o seu time favorito?</p>
+
+    <div class="listagem-times" *ngFor="let time of dadosTimes">
+        <p>
+            {{ time.nome }}
+        </p>
+        <button (click)="contabilizaVotos(time.nome)">Votar</button>
+      </div>
 </div>
