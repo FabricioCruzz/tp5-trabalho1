@@ -12,8 +12,6 @@ export class HomeComponent implements OnInit {
   dadosTimes: Array<Time> = []
   storageChave: string = 'times'
 
-  teste: any
-
   constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {

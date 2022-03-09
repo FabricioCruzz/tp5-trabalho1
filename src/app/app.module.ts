@@ -11,6 +11,8 @@ import { AuthService } from './cadastro/login/auth.service';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SemPermissaoComponent } from './cadastro/sem-permissao/sem-permissao.component';
+import { NgChartsModule } from 'ng2-charts';
+import { GraficoComponent } from './grafico/grafico.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { SemPermissaoComponent } from './cadastro/sem-permissao/sem-permissao.co
     LoginComponent,
     AddTimeComponent,
     HomeComponent,
-    SemPermissaoComponent
+    SemPermissaoComponent,
+    GraficoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgChartsModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
