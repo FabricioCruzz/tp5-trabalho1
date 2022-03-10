@@ -1,18 +1,26 @@
 <div class="container-title">
-    <h1>Bem-vindo à votação de times!</h1>
+  <h1>Bem-vindo à votação de times!</h1>
 </div>
 
 
-<div class="container-times">
+<div class="dashboard">
+  <div class="container-times" *ngIf="existeDados">
 
-  <p id="titulo-votacao">Qual o seu time favorito?</p>
+    <p id="titulo-votacao">Qual o seu time favorito?</p>
 
-    <div class="listagem-times" *ngFor="let time of dadosTimes">
-        <p>
-            {{ time.nome }}
-        </p>
-        <button (click)="contabilizaVotos(time.nome)">Votar</button>
-      </div>
+      <div class="listagem-times" *ngFor="let time of dadosTimes">
+          <p>
+              {{ time.nome }}
+          </p>
+          <button (click)="contabilizaVotos(time.nome)">Votar</button>
+        </div>
+  </div>
+
+  <div class="container-grafico" *ngIf="existeDados">
+    <grafico-times></grafico-times>
+  </div>
+
+  <div *ngIf="!existeDados">
+    <p  id="sem-dados-msg">Ainda não existem times cadastrados!</p>
+  </div>
 </div>
-
-<app-grafico></app-grafico>

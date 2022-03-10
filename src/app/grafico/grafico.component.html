@@ -1,12 +1,12 @@
 <div class="container">
   <div class="chart-container">
     <h2 class="title">Votação</h2>
-    <div style="display: block; height: 400px; width:500px">
+    <div class="grafico">
       <canvas baseChart
-        [data]="pieChartData"
-        [type]="pieChartType"
-        [options]="pieChartOptions"
-        [plugins]="pieChartPlugins">
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [type]="barChartType">
       </canvas>
     </div>
   </div>

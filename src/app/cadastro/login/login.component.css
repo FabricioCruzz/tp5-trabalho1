@@ -64,11 +64,11 @@ button {
     border-radius: 20px;
     margin-top: 30px;
     color: rgb(15, 15, 1);
-    background-color: #f0efea9c;
+    background-color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #636466;
+    background-color: #becae2dc;
     transition: .5s;
 }

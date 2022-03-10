@@ -1,1 +1,19 @@
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
 
+.chart-container {
+  display: inline-block;
+}
+
+.grafico {
+  display: inline-block;
+}
+
+canvas {
+  height: 500px;
+  width: 600px;
+}

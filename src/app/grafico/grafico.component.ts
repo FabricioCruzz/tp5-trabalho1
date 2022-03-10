@@ -8,7 +8,7 @@ import { StorageService } from '../cadastro/add-time/storage.service';
 
 
 @Component({
-  selector: 'app-grafico',
+  selector: 'grafico-times',
   templateUrl: './grafico.component.html',
   styleUrls: ['./grafico.component.css']
 })
@@ -21,31 +21,36 @@ export class GraficoComponent implements OnInit {
 
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
 
-  // Pie
-  public pieChartOptions: ChartConfiguration['options'] = {
+  //Bar
+  public barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
+    scales: {
+      x: {},
+      y: {
+        min: 0
+      }
+    },
     plugins: {
       legend: {
         display: true,
-        position: 'top',
       },
       datalabels: {
-        formatter: (value, ctx) => {
-          if (ctx.chart.data.labels) {
-            return ctx.chart.data.labels[ctx.dataIndex];
-          }
-        },
-      },
+        anchor: 'end',
+        align: 'end'
+      }
     }
   };
-  public pieChartData: ChartData<'pie', number[], string> = {
+  public barChartType: ChartType = 'bar';
+  public barChartPlugins = [
+    DatalabelsPlugin
+  ]
+
+  public barChartData: ChartData<'bar', number[], string> = {
     labels: this.nomes,
-    datasets: [ {
-      data: this.qtdVotos
-    } ]
-  };
-  public pieChartType: ChartType = 'pie';
-  public pieChartPlugins = [ DatalabelsPlugin ];
+    datasets: [
+      { data: this.qtdVotos, label: 'Time', backgroundColor: 'rgba(34, 87, 224, 0.75)', hoverBackgroundColor: 'rgba(21, 80, 198, 1)' }
+    ]
+  }
 
 
   constructor(private storageService: StorageService) { }

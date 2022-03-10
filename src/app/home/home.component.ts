@@ -11,12 +11,15 @@ export class HomeComponent implements OnInit {
 
   dadosTimes: Array<Time> = []
   storageChave: string = 'times'
+  existeDados: boolean = false
 
   constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
     this.dadosTimes = this.storageService.carregarDadosdoSession(this.storageChave)
-    console.log('Dados do Session Storage: ' + this.dadosTimes)
+    if(this.dadosTimes.length != 0){
+      this.existeDados = true
+    }
   }
 
   contabilizaVotos(time: string){
@@ -30,12 +33,8 @@ export class HomeComponent implements OnInit {
 
     // Atualiza os dados de votos dos times
     this.storageService.salvarDadosNoSession(this.storageChave, this.dadosTimes)
-
-    // this.dadosTimes.forEach(element => {
-    //   console.log('Nome Time: ' + element.nome + '\n' + 'Votos: ' + element.contadorVotos)
-
-    // });
-    // console.log('Teste: ' + time)
+    //Refresh na página para atualizar o gráfico
+    location.reload()
   }
 
 }
