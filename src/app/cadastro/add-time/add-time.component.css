@@ -24,7 +24,7 @@ label, input {
 
 label {
     font-weight: bold;
-    font-size: .8rem;
+    font-size: 1rem;
 }
 
 input {
@@ -33,11 +33,13 @@ input {
     padding: 10px;
     font-size: 1rem;
     margin-bottom: 20px;
+
 }
 
 input:focus {
     outline: none;
     border-bottom: 2px solid #ddca1e;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
 }
 
 button {
@@ -58,4 +60,5 @@ button {
 button:hover {
     background-color: #1550c6;
     transition: .5s;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
 }

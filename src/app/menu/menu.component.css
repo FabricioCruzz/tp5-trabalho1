@@ -8,14 +8,15 @@
     margin-bottom: 2em;
     float: left;
     width: 100%;
-    background-color: #E3483E;
+    background-color: rgba(34, 87, 224, 0.75);
     list-style: none;
     border-bottom: 0.5px solid gray;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
 }
 
 .logo {
     margin: 0 0px -15px 45px !important;
-    padding: 0 !important;
+    padding: 0;
     width: 130px;
     height: 36px;
     background-size: 166px 64px;
@@ -39,5 +40,6 @@
 }
 
 .menu ul li a:hover {
-    color: rgba(0, 0, 0, 0.61);
+    color: rgba(37, 37, 37, 0.555);
+    transition: .35s;
 }
