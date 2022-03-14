@@ -12,19 +12,19 @@ export class AddTimeComponent implements OnInit {
   nomeTime: string = ''
   contadorVotosTime: number = 0
 
-  time: Time = {
-    nome: '',
-    contadorVotos: 0
-  }
+  time: Time = new Time()
 
   times: Array<Time> = []
   storageChave: string = 'times'
 
+  timeJaExiste: boolean = false
+
   constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
+
+    // Atualiza o array local com os dados do Session Storage
     this.times = this.storageService.carregarDadosdoSession(this.storageChave)
-    console.log('Array de Times no Init: ' + this.times)
   }
 
 
@@ -33,14 +33,25 @@ export class AddTimeComponent implements OnInit {
     this.time.nome = this.nomeTime
     this.time.contadorVotos = 0
 
-    this.times.push(this.time)
+    this.timeJaExiste = false
 
-    this.storageService.salvarDadosNoSession(this.storageChave, this.times)
+    // Verfica se não há tentativa de se criar time de nomes iguais
+    // Caso seja o caso, ele não é adicionado para não duplicar dados
+    this.verificaExistenciaDeTimeNoArray()
+    if(!this.timeJaExiste){
+      this.times.push(this.time)
+      this.storageService.salvarDadosNoSession(this.storageChave, this.times)
+    }
 
     this.nomeTime =''
+  }
 
-    console.log('Array Local: ' + this.times)
-    console.log('Session Storage: ' + sessionStorage.getItem(this.storageChave))
+  verificaExistenciaDeTimeNoArray(){
+    this.times.forEach(element => {
+      if(this.nomeTime === element.nome){
+        this.timeJaExiste = true
+      }
+    })
   }
 
 }

@@ -57,6 +57,7 @@ export class GraficoComponent implements OnInit {
   ngOnInit(): void {
     this.dados = this.storageService.carregarDadosdoSession(this.storageChave)
 
+    // Divide o array de times em arrays de nomes e votos para alimentar o gráfico
     this.nomes = this.geraArrayDeNomes(this.dados, this.nomes)
     this.qtdVotos = this.geraArrayDeQtdVotos(this.dados, this.qtdVotos)
   }

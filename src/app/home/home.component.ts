@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
 
     // Atualiza os dados de votos dos times
     this.storageService.salvarDadosNoSession(this.storageChave, this.dadosTimes)
+
     //Refresh na página para atualizar o gráfico
     location.reload()
   }

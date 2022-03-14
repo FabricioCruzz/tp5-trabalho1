@@ -15,11 +15,10 @@ export class AuthService {
     if(user.userEmail === 'admin@mail.com' &&
       user.userPassword === 'admin'){
         this.usuarioAutenticado = true
-        console.log('Login realizado com sucesso!')
         this.router.navigate(['/cadastro'])
       }
     else{
-      alert('Erro no login!')
+      alert('Usuário/Senha está incorreto!\nPor favor, tente novamente!')
       this.usuarioAutenticado = false
     }
   }
