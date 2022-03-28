@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { StorageService } from './storage.service';
 import { Time } from './time';
 
@@ -28,7 +29,7 @@ export class AddTimeComponent implements OnInit {
   }
 
 
-  addTimeNaLista(){
+  addTimeNaLista(form: NgForm){
     this.time = new Time()
     this.time.nome = this.nomeTime
     this.time.contadorVotos = 0
@@ -36,22 +37,23 @@ export class AddTimeComponent implements OnInit {
     this.timeJaExiste = false
 
     // Verfica se não há tentativa de se criar time de nomes iguais
-    // Caso seja o caso, ele não é adicionado para não duplicar dados
-    this.verificaExistenciaDeTimeNoArray()
+    // Caso aconteça, ele não é adicionado para não duplicar dados
+    this.timeJaExiste = this.verificaExistenciaDeTimeNoArray()
     if(!this.timeJaExiste){
       this.times.push(this.time)
       this.storageService.salvarDadosNoSession(this.storageChave, this.times)
     }
 
-    this.nomeTime =''
+    form.resetForm()
   }
 
   verificaExistenciaDeTimeNoArray(){
-    this.times.forEach(element => {
-      if(this.nomeTime === element.nome){
-        this.timeJaExiste = true
-      }
-    })
+
+    const index = this.times.findIndex(
+      element => this.nomeTime === element.nome
+      )
+
+    return index !== -1
   }
 
 }

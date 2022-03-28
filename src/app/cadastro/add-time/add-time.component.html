@@ -1,9 +1,20 @@
 <h1>Cadastro de Times</h1>
 
 <div class="container-cadastro">
-    <form>
-        <label for="nomeTime">Nome do Time</label>
-        <input id="nomeTime" type="text" name="nomeDoTime" placeholder="Nome do time..." [(ngModel)]="nomeTime">
+    <form #myForm="ngForm" (submit)="addTimeNaLista(myForm)">
+      <label for="nomeTime">Nome do Time</label>
+      <input id="nomeTime" type="text" name="nomeDoTime" placeholder="Nome do time..." [(ngModel)]="nomeTime" #time="ngModel" required>
+
+      <div class="aviso-erro" *ngIf="time.dirty || time.touched">
+        <p *ngIf="time.errors?.['required']">
+          Campo obrigatório!
+        </p>
+      </div>
+
+      <div class="aviso-erro" *ngIf="verificaExistenciaDeTimeNoArray()">
+        <p>O time já está cadastrado!</p>
+      </div>
+
+      <input id="btn" type="submit" value="Cadastrar" [disabled]="myForm.invalid || verificaExistenciaDeTimeNoArray()">
     </form>
-    <button (click)="addTimeNaLista()">Cadastrar</button>
 </div>
